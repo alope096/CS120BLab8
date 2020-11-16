@@ -139,6 +139,7 @@ unsigned char button = ~PINA & 0x07;
     switch(state){
         case stateOFF:
            PWM_off();
+           noteNum = 0;
         break;
 
         case stateOFF_press:
@@ -176,7 +177,7 @@ int main(void) {
     DDRA = 0x00; PORTA = 0xFF;
     DDRB = 0xFF; PORTB = 0x00;
 
-    PWM_off();
+    PWM_on();
     
     state = stateOFF;
     /* Insert your solution below */
